@@ -1,0 +1,159 @@
+[gd_scene load_steps=27 format=3 uid="uid://00rnslxudlp7"]
+
+[ext_resource type="Texture2D" uid="uid://c00bafsfrkya7" path="res://sprites/Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Bomb/bomb 01.png" id="1_hfjuf"]
+[ext_resource type="Script" uid="uid://dt3tc1jpp7pds" path="res://scripts/captain_boom/bomb.gd" id="1_oxw06"]
+[ext_resource type="Texture2D" uid="uid://xq1nd8vvor7g" path="res://sprites/Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Bomb/bomb 02.png" id="3_mvdm1"]
+[ext_resource type="Texture2D" uid="uid://vsiqtnkuf3ur" path="res://sprites/Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Bomb/bomb 03.png" id="4_50ipf"]
+[ext_resource type="Texture2D" uid="uid://cdksldyaxy7eu" path="res://sprites/Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Bomb/bomb 04.png" id="5_4on3j"]
+[ext_resource type="Texture2D" uid="uid://dsueq3mgo66va" path="res://sprites/Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Bomb/bomb 05.png" id="6_4umja"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_hfjuf"]
+rough = true
+bounce = 0.5
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pebch"]
+atlas = ExtResource("1_hfjuf")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_22b3p"]
+atlas = ExtResource("3_mvdm1")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_284sc"]
+atlas = ExtResource("4_50ipf")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kn0xd"]
+atlas = ExtResource("5_4on3j")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_72tbc"]
+atlas = ExtResource("6_4umja")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2ua6v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pebch")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_22b3p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_284sc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kn0xd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_72tbc")
+}],
+"loop": false,
+"name": &"tail",
+"speed": 1.7
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_x6utd"]
+radius = 4.1231055
+
+[sub_resource type="Gradient" id="Gradient_oxw06"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_mvdm1"]
+gradient = SubResource("Gradient_oxw06")
+width = 1
+height = 1
+
+[sub_resource type="Gradient" id="Gradient_50ipf"]
+offsets = PackedFloat32Array(0.0028818443, 0.023054754, 0.10951009, 0.6080692, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0.72896105, 0.35516077, 0, 1, 0.30008197, 0.28196537, 0.2609799, 1, 0.5409904, 0.54099053, 0.5409904, 1, 0.5372549, 0.5372549, 0.5372549, 0.72156864)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_4on3j"]
+gradient = SubResource("Gradient_50ipf")
+
+[sub_resource type="Curve" id="Curve_oxw06"]
+_limits = [-1.0, 1.0, 0.0, 3.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.056300268, 0.05010438), -0.5327983, -0.5327983, 0, 0, Vector2(1.0134048, -0.08559501), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_mvdm1"]
+curve = SubResource("Curve_oxw06")
+
+[sub_resource type="Curve" id="Curve_4umja"]
+_limits = [0.0, 11.795403, 0.0, 1.0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.013404828, 5.0727615), 0.0, 0.0, 0, 0, Vector2(0.08847186, 0.19084358), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_pebch"]
+curve = SubResource("Curve_4umja")
+
+[sub_resource type="Curve" id="Curve_22b3p"]
+_limits = [0.15866393, 10.0, 0.0, 1.0]
+_data = [Vector2(0, 0.15866393), 0.0, 0.0, 0, 0, Vector2(0.013404828, 2.9220448), 0.0, 0.0, 0, 0, Vector2(0.19839144, 4.3910546), 0.0, 0.0, 0, 0, Vector2(1, 8.1971245), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_284sc"]
+curve = SubResource("Curve_22b3p")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_kn0xd"]
+particle_flag_disable_z = true
+direction = Vector3(0, -1, 0)
+spread = 180.0
+radial_velocity_min = -2.2351742e-05
+radial_velocity_max = 99.99998
+radial_velocity_curve = SubResource("CurveTexture_pebch")
+gravity = Vector3(0, 10, 0)
+scale_curve = SubResource("CurveTexture_284sc")
+color_ramp = SubResource("GradientTexture1D_4on3j")
+emission_curve = SubResource("CurveTexture_mvdm1")
+collision_mode = 1
+collision_friction = 0.0
+collision_bounce = 0.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_oxw06"]
+radius = 48.0
+
+[node name="Bomb" type="RigidBody2D"]
+collision_layer = 4
+collision_mask = 768
+physics_material_override = SubResource("PhysicsMaterial_hfjuf")
+linear_damp = 0.5
+angular_damp = 0.4
+script = ExtResource("1_oxw06")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_2ua6v")
+animation = &"tail"
+frame = 4
+frame_progress = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_x6utd")
+
+[node name="Boom" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+autostart = true
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+emitting = false
+amount = 500
+texture = SubResource("GradientTexture2D_mvdm1")
+lifetime = 2.0
+one_shot = true
+explosiveness = 0.97
+randomness = 1.0
+process_material = SubResource("ParticleProcessMaterial_kn0xd")
+
+[node name="AttackArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 0
+metadata/damage = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
+shape = SubResource("CircleShape2D_oxw06")
+disabled = true
+
+[connection signal="timeout" from="Boom" to="." method="_on_boom_timeout"]
+[connection signal="finished" from="GPUParticles2D" to="." method="_on_gpu_particles_2d_finished"]

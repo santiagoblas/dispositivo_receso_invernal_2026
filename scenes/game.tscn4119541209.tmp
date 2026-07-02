@@ -1,0 +1,55 @@
+[gd_scene load_steps=7 format=3 uid="uid://b6qylqdug36sf"]
+
+[ext_resource type="TileSet" uid="uid://ctu7nw8r8yrxx" path="res://sprites/tilemaps/platforms.tres" id="1_y1ghj"]
+[ext_resource type="Texture2D" uid="uid://daokfajf53p26" path="res://sprites/Treasure Hunters/Palm Tree Island/Sprites/Background/BG Image.png" id="2_yqjtg"]
+[ext_resource type="PackedScene" uid="uid://bpax726jcnkhj" path="res://scenes/world/platform.tscn" id="3_lnu2h"]
+[ext_resource type="Script" uid="uid://s44fmtv334m5" path="res://scripts/captain_boom/captain_boom.gd" id="4_iywne"]
+[ext_resource type="Texture2D" uid="uid://chg61fnqx4gac" path="res://sprites/Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/01-Idle/Idle 01.png" id="4_lbhrr"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_iywne"]
+
+[node name="Game" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(575, 325)
+
+[node name="World" type="Node2D" parent="."]
+
+[node name="Platforms" type="TileMapLayer" parent="World"]
+tile_set = ExtResource("1_y1ghj")
+
+[node name="BgImage" type="Sprite2D" parent="World"]
+position = Vector2(582, 311)
+scale = Vector2(3.6490278, 5.3750005)
+texture = ExtResource("2_yqjtg")
+
+[node name="Platforms" type="Node2D" parent="."]
+
+[node name="Platform" parent="Platforms" instance=ExtResource("3_lnu2h")]
+position = Vector2(273, 303)
+
+[node name="Platform2" parent="Platforms" instance=ExtResource("3_lnu2h")]
+position = Vector2(400, 263)
+
+[node name="Platform3" parent="Platforms" instance=ExtResource("3_lnu2h")]
+position = Vector2(528, 216)
+
+[node name="Platform4" parent="Platforms" instance=ExtResource("3_lnu2h")]
+position = Vector2(614, 216)
+
+[node name="Platform5" parent="Platforms" instance=ExtResource("3_lnu2h")]
+position = Vector2(700, 216)
+
+[node name="Platform6" parent="Platforms" instance=ExtResource("3_lnu2h")]
+position = Vector2(786, 216)
+
+[node name="CaptainBoom" type="CharacterBody2D" parent="."]
+position = Vector2(252, 254)
+collision_mask = 256
+script = ExtResource("4_iywne")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CaptainBoom"]
+shape = SubResource("CapsuleShape2D_iywne")
+
+[node name="Sprite2D" type="Sprite2D" parent="CaptainBoom"]
+texture = ExtResource("4_lbhrr")
